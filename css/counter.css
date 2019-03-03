@@ -1,0 +1,335 @@
+.btn-primary {
+	color: #fff;
+	background: none !important;
+	border: none !important;
+    width: 100% !important;
+}
+.btn-primary.focus, .btn-primary:focus {
+	box-shadow: none !important;
+}
+/*choose plan_area*/
+.filter-section h1 {
+	font-size: 18px;
+	text-align: center;
+	padding: 10px 0;
+	text-transform: capitalize;
+}
+.sidebar-checkbox {
+	margin-left: 28px;
+	padding: 12px 0;
+}
+.sidebar-checkbox input {
+	margin-bottom: 20px;
+}
+.sidebar-checkbox span {
+	font-size: 17px;
+	padding-left: 5px;
+}
+.sidebar-menu h3 {
+	text-align: center;
+	padding: 12px 0;
+	border-bottom: 2px solid #f4f5f9;
+	font-size: 18px;
+	font-weight: 700;
+}
+/*=======================================================================
+                            counter-dashboard style
+=========================================================================*/
+#model-content-area {
+	background: #fff;
+}
+.counter-top {
+	margin-top: 15vh;
+}
+#card {
+	background: #f4f5f9;
+	padding: 7px;
+}
+#card h1 {
+	font-size: 30px;
+	text-transform: capitalize;
+	padding: 5px 25px;
+    text-align: center;
+}
+.card {
+	margin: 10px;
+	background: #ffffff;
+	box-shadow: 0px 5px 39px 2px rgba(185, 185, 185, 0.2);
+	padding: 20px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border: none;
+}
+.card:hover {
+	background: #7f3e98 !important;
+}
+.card:hover p, .card:hover h6 {
+	color: #fff;
+}
+.card:hover .bg-1, .card:hover .bg-2, .card:hover .bg-3, .card:hover .bg-4, .card:hover .bg-5, .card:hover .bg-6, .card:hover .bg-7, .card:hover .bg-8, .card:hover .bg-9 {
+    background: #fff;
+    color: #000;
+}
+
+
+.card:hover .bg-3{
+    background: #fff;
+    color: #000;
+}
+.card-text .bg-1{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #00aced;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-2{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #00d33c;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-3{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #f76e2b;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-4{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #edb200;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-5{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #7f3e98;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-6{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #dfdfdf;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 6px;
+    
+}
+.card-text .bg-7{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #00d3b8;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-8{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #c8135c;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-9{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #d300c7;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-10{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #00a65a;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-11{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #00c0ef;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-text .bg-12{
+	font-size: 12px;
+	margin-right: 10px;
+	background: #f39c12;
+	color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+    padding: 5px;
+}
+.card-body p {
+	font-size: 18px;
+	color: #262d73;
+	padding-bottom: 10px;
+}
+.card .clr-1 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #00aced;
+}
+.card .clr-2 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #00d33c;
+}
+.card .clr-3 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #f76e2b;
+}
+.card .clr-4 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #edb200;
+}
+.card .clr-5 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #7f3e98;
+}
+.card .clr-6 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #585858;
+}
+.card .clr-7 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #00d3b8;
+}
+.card .clr-8 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #c8135c;
+}
+.card .clr-9 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #d300c7;
+}
+.card .clr-10 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #00a65a;
+}
+.card .clr-12 {
+	font-size: 36px;
+	margin-left: 40px;
+	color: #f39c12;
+}
+/*Model style*/
+.modal-header h6 {
+	background: #f4f5f9;
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	font-size: 30px;
+	font-weight: 600;
+	color: #454545;
+    position:relative;
+}
+.modal-header .close {
+	position: absolute;
+	right: 0;
+	padding: 37px 40px;
+	font-size: 26px;
+    border: none !important;
+}
+.modal-header .close:active{
+    border: none;
+}
+.campaign-cordinator .table thead tr th {
+	font-size: 18px;
+	padding: 10px;
+	font-weight: 700;
+	text-align: center;
+}
+.campaign-cordinator .table tbody tr {
+	border-left: 5px solid #7E3E98;
+	margin: 3px 0 !important;
+	display: block;
+	border: ;
+	box-shadow: ;
+	text-shadow: ;
+	border-bottom: ;
+	padding: 3px;
+}
+.campaign-cordinator .table tbody tr th {
+	padding: 3px 15px;
+	color: #7f3e98;
+	border-bottom: none;
+}
+.campaign-cordinator1 .table thead tr th {
+	font-size: 20px;
+	padding: 10px 0;
+	font-weight: 700;
+}
+.campaign-cordinator1 .table tbody tr td {
+	margin-bottom: ;
+	padding: 8px 0;
+}
+	

@@ -1,0 +1,96 @@
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .logo a {
+        display: flex;
+    }
+
+    .logo span {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    #nav-item {
+        display: none;
+    }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .logo span {
+        display: ;
+    }
+
+    #nav-item {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .navbar-light .navbar-toggler {
+        margin-left: auto;
+    }
+}
+@media (min-width:991px) and (max-width:1200px){
+    .logo a span {
+	font-size: 15px;
+}
+}
+/* // Large devices (desktops, less than 1200px) */
+
+@media (min-width: 1220px) and (max-width: 3000px) {
+
+
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 20px;
+    }
+
+    .item-activate img {
+        min-width: 242px;
+    }
+
+    .nice-select {
+        margin-left: 4%;
+    }
+
+    .assign-area h3 {
+        margin-left: 10px;
+    }
+
+    #ascrail2000 {
+        left: 5px !important;
+    }
+
+
+    .content-update .nicescroll-cursors {
+        right: 0 !important;
+    }
+
+    .content-update-link h2 {
+        padding-left: 24px;
+    }
+
+    .site-url {
+        margin-left: 13px;
+    }
+
+}
+
+@media (min-width: 1280px) and (max-width: 1600px) {
+
+
+
+
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 18px;
+    }
+
+    .item-activate img {
+        min-width: 166px;
+    }
+
+    #nav-item a.nav-link {
+        margin-right: 17px;
+    }
+
+}
