@@ -5,9 +5,9 @@
 
  
  define('DBHOST', 'localhost');
- define('DBUSER', 'veechite_savaco');
- define('DBPASS', 'savaco@2018');
- define('DBNAME', 'veechite_dashboard_savasaachi');
+ define('DBUSER', 'root');
+ define('DBPASS', '');
+ define('DBNAME', 'dashboard_savasaachi');
  
 
  $conn = mysqli_connect(DBHOST,DBUSER,DBPASS);

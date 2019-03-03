@@ -38,7 +38,7 @@
 				$sql = "INSERT INTO user". "(name,email,team_name,role,password) ". 
 				"VALUES('$name','$email','$team_name','$role','$password')";
 				
-				mysqli_select_db($conn,'veechite_dashboard_savasaachi');
+				mysqli_select_db($conn,'dashboard_savasaachi');
 				$retval = mysqli_query($conn,$sql);
 				if($retval){
 	
