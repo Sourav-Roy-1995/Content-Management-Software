@@ -13,7 +13,7 @@
 		
 		if(isset($_REQUEST)){
 
-			    $name = mysqli_real_escape_string($conn, $_POST['name']);
+			  $name = mysqli_real_escape_string($conn, $_POST['name']);
 				$date = mysqli_real_escape_string($conn, $_POST['date']);
 				$post_material = mysqli_real_escape_string($conn, $_POST['post_material']);
 				$poster_material = mysqli_real_escape_string($conn, $_POST['poster_material']);

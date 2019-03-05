@@ -992,4 +992,33 @@ a.btn.btn-secondary {
     border:none!important;
     margin-top: 7px;
 }
-
+/* drop */
+ul.dropd {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0 1px 4px 4px #E2E3E7;
+    width: 25%;
+    padding: 20px 0;
+    text-align: center;
+    list-style: none;
+    display: none;
+    top: 90%;
+}
+ul.dropd li{
+    border-bottom: 1px solid #813E9C;
+}
+ul.dropd li:last-child{
+    border: none;
+}
+ul.dropd li a{
+    display: block;
+    padding: 15px 0;
+    font-weight: 600;
+    text-transform: capitalize;
+    
+    color: #000000;
+}
+.nav-item:hover ul.dropd{
+    display: block;
+    transform-origin: left;
+}

@@ -274,7 +274,7 @@ var id = $(this).attr("id");
 if(id != '')  
 {  
     $.ajax({  
-            url:"modal_admin_one.php",  
+            url:"modal_admin_special_content.php",  
             method:"POST",  
             data:{id:id},  
             success:function(data){  
@@ -328,7 +328,7 @@ var vision =  $('#vision').val();
 var comment =  $('#comment').val();
 
 $.ajax({
-    url      : 'edit_content.php',
+    url      : 'edit_special_content.php',
     method   : 'post', 
     data     : {name : name , date: date , post_material : post_material , tags: tags , poster_material:poster_material , vision:vision , comment:comment ,  id: id},
     success  : function(response){
@@ -418,7 +418,7 @@ $(document).ready(function (){
     if(date != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin.php",  
+                url:"filter_special_content_admin.php",  
                 method:"POST",  
                 data:{date:date},  
                 success:function(data)  
@@ -451,7 +451,7 @@ $('#filter').click(function(){
     if(date != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin.php",  
+                url:"filter_special_content_admin.php",  
                 method:"POST",  
                 data:{date:date},  
                 success:function(data)  
@@ -489,7 +489,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin_two.php",  
+                url:"filter_special_content_admin_two.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  
