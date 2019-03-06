@@ -57,9 +57,14 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
 
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="guestrelation.php">All content</a>
-                            </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">All content</a>
+                            <ul class="dropd">
+                                <li><a href="guestrelation_special_content.php">special content</a></li>
+                                <li><a href="guestrelation.php">regular content</a></li>
+                            </ul>
+                        </li>
 
                             <?php					   	
                             require("connection.php");

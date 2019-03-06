@@ -1,9 +1,10 @@
 <?php 
-    include "auth/auth_guestrelation_manager.php";
-    $guestrelation_name =  $_SESSION["name"];
+    include "auth/auth_designer.php";
+    $designer_name =  $_SESSION["name"];
     date_default_timezone_set('Asia/Dhaka');
     $active = "active";
 ?>
+
 
 
 <!DOCTYPE HTML>
@@ -32,8 +33,7 @@
 <!-- cross-browser-compatibility -->
 <script src="js/html5shiv.min.js"></script>
 <script src="js/respond.js"></script>
-
-<!-- Date Format -->
+<!-- Date Picker -->
 <link rel="stylesheet" href="css/custom_date_picker.css">
 
 </head>
@@ -49,7 +49,7 @@
         <!--[/Start Logo ]-->
         <div class="logo">
             <figure>
-                <a href="guestrelation.php"><img src="images/logo.png" alt="" class="img-fluid">Business Management Console </a>
+                <a href="designer.php"><img src="images/logo.png" alt="" class="img-fluid">Business Management Console </a>
             </figure>
         </div><!--[/End logo]-->
     </div>
@@ -60,29 +60,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
-
+                
                     <li class="nav-item">
                         <a class="nav-link active" href="#">All content</a>
                         <ul class="dropd">
-                            <li><a href="guestrelation_special_content.php">special content</a></li>
-                            <li><a href="guestrelation.php">regular content</a></li>
+                            <li><a href="designer_special_content.php">special content</a></li>
+                            <li><a href="designer.php">regular content</a></li>
                         </ul>
                     </li>
-                    
+
                     <?php					   	
                     require("connection.php");
-                    $business_id = $_GET['bs_id'];				                   
-                    $result = mysqli_query($conn, "SELECT * FROM business WHERE bs_status = '".$active."' order by id desc limit 1");
+                    $business_id = $_GET['bs_id'];				
+
+                    $result = mysqli_query($conn, "SELECT * FROM business WHERE designer =  '".$designer_name."' AND bs_status = '".$active."' order by id desc limit 1");
                     
                     while($row=mysqli_fetch_array($result)){
                     $id=$row['id'];
 
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="guestrelation_links.php">links</a>
+                        <a class="nav-link" href="designer_links.php">links</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="guestrelation_business.php?bs_id=<?php echo $id; ?>">Business</a>
+                        <a class="nav-link" href="designer_business.php?bs_id=<?php echo $id; ?>">Business</a>
                     </li>
                     <?php                                  
                     }
@@ -91,16 +92,17 @@
             </div><!--[/End Navbar]-->
         </nav><!--[/End Nav]-->
         <div id="nav-item">
-            <a class="nav-link dropdown" href=""><span>hello</span> <?php echo $guestrelation_name; ?> <i class="fa fa-user user"></i></a>
+            <a class="nav-link dropdown" href=""><span>hello</span> <?php echo $designer_name; ?> <i class="fa fa-user user"></i></a>
             <div class="logout">
                 <ul>
+                    
                     <li><a href="#"><i class="fas fa-cogs lgo"></i>setting</a></li>
-                    <li><a href="counter_guestrelation.php"><i class="fas fa-calculator lgo"></i>Counter</a></li>
+                    <li><a href="counter_designer.php"><i class="fas fa-calculator lgo"></i>Counter</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt lgo"></i>LogOut</a></li>
                 </ul>
             </div>
         </div>
-</div>
+    </div>
 </div>
 </div>
 </header><!--[/End header]-->
@@ -126,12 +128,13 @@
 
                 <input type="hidden" id="destination_one" value="" class="form-control">
 
-                <input type="hidden" value="active" id="active" class="form-control">      
+                <input type="hidden" id="designer_name" class="form-control"  value="<?php echo  $designer_name ?> " > 
+
+                <input type="hidden" value="active" id="active" class="form-control">    
 
                 <?php
-                require("connection.php");   
-                     
-                $result = mysqli_query($conn, "SELECT * FROM business WHERE  bs_status = '".$active."'  ");
+                require("connection.php");        
+                $result = mysqli_query($conn, "SELECT * FROM business WHERE designer =  '".$designer_name."' AND bs_status = '".$active."' ");
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>
@@ -146,10 +149,9 @@
 
     <!--Get Content --> 
     <div class="col-lg-9 content-top">
-
-            <div class="content-update" id="content_table">
-
-            </div>
+        <div class="content-update" id="content_table">
+                
+        </div>
     </div><!--End Get Content --> 
 </div>
 </div>
@@ -203,7 +205,7 @@ var id = $(this).attr("id");
 if(id != '')  
 {  
     $.ajax({  
-            url:"modal_admin_one.php",  
+            url:"modal_admin_special_content.php",  
             method:"POST",  
             data:{id:id},  
             success:function(data){  
@@ -267,18 +269,19 @@ $.datepicker.setDefaults({
 });  
 $(function(){  
     $("#date").datepicker();   
+    $("#designer_name");
     $("#active");
 });  
 $(document).ready(function (){  
     var date = $('#date').val();
+    var designer_name = $('#designer_name').val();
     var active = $('#active').val();
-
-    if(date != '' && active != '')  
+    if(date != '' && designer_name != '' && active != '') 
     {  
             $.ajax({  
-                url:"filter_content_guestrelation.php",  
+                url:"filter_special_content_designer.php",  
                 method:"POST",  
-                data:{date:date,active:active},  
+                data:{date:date,designer_name:designer_name,active:active},  
                 success:function(data)  
                 {  
                     $('#content_table').html(data);  
@@ -303,20 +306,19 @@ $.datepicker.setDefaults({
 });  
 $(function(){  
     $("#date").datepicker();
-    $("#active");
-  
+    $("#designer_name");
+    $("#active"); 
 });  
 $('#filter').click(function(){  
     var date = $('#date').val();
-
+    var designer_name = $('#designer_name').val();
     var active = $('#active').val();
-
-    if(date != ''  && active != '')  
+    if(date != '' && designer_name != '' && active != '')  
     {  
             $.ajax({  
-                url:"filter_content_guestrelation.php",  
+                url:"filter_special_content_designer.php",  
                 method:"POST",  
-                data:{date:date,active:active},  
+                data:{date:date,designer_name:designer_name,active:active},  
                 success:function(data)  
                 {  
                     $('#content_table').html(data);  
@@ -352,7 +354,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin_two.php",  
+                url:"filter_special_content_admin_two.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  

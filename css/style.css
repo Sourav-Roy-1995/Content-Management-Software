@@ -995,28 +995,29 @@ a.btn.btn-secondary {
 /* drop */
 ul.dropd {
     position: absolute;
-    background: #ffffff;
+    background: #7E3E98;
     box-shadow: 0 1px 4px 4px #E2E3E7;
-    width: 25%;
-    padding: 20px 0;
+    width: 160px;
     text-align: center;
     list-style: none;
     display: none;
     top: 90%;
 }
 ul.dropd li{
-    border-bottom: 1px solid #813E9C;
+    border-bottom: 1px solid #fff;
 }
 ul.dropd li:last-child{
     border: none;
 }
 ul.dropd li a{
+    background: #7E3E98;
+    width: 100%;
     display: block;
-    padding: 15px 0;
+    color: #fff;
+    padding: 10px 1px;
+    text-transform: uppercase;
     font-weight: 600;
-    text-transform: capitalize;
-    
-    color: #000000;
+    color: #fff;
 }
 .nav-item:hover ul.dropd{
     display: block;

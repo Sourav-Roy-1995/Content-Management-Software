@@ -60,10 +60,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
+                
                     <li class="nav-item">
-                        <a class="nav-link active" href="designer.php">All content</a>
+                        <a class="nav-link active" href="#">All content</a>
+                        <ul class="dropd">
+                            <li><a href="designer_special_content.php">special content</a></li>
+                            <li><a href="designer.php">regular content</a></li>
+                        </ul>
                     </li>
-
+                    
                     <?php					   	
                     require("connection.php");
                     $business_id = $_GET['bs_id'];				

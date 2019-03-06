@@ -59,12 +59,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
+                
                     <li class="nav-item">
                         <a class="nav-link active" href="">All content</a>
 
                         <ul class="dropd">
                             <li><a href="dashboard_special_content.php">special content</a></li>
-                            <li><a href="dashboard.php">normal content</a></li>
+                            <li><a href="dashboard.php">regular content</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -72,7 +73,7 @@
 
                         <ul class="dropd">
                             <li><a href="write-special-content.php">special content</a></li>
-                            <li><a href="write-content.php">normal content</a></li>
+                            <li><a href="write-content.php">regular content</a></li>
                         </ul>
                     </li>
 

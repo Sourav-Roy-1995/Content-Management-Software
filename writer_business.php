@@ -58,11 +58,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
 
     <ul class="navbar-nav mr-auto">
+
         <li class="nav-item">
-            <a class="nav-link active" href="writer.php">All content</a>
+            <a class="nav-link active" href="">All content</a>
+
+            <ul class="dropd">
+                <li><a href="writer_special_content.php">special content</a></li>
+                <li><a href="writer.php">regular content</a></li>
+            </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="writer_write_content.php">write content</a>
+            <a class="nav-link" href="">write content</a>
+
+            <ul class="dropd">
+                <li><a href="writer_write_special_content.php">special content</a></li>
+                <li><a href="writer_write_content.php">regular content</a></li>
+            </ul>
         </li>
 
         <?php					   	

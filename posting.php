@@ -60,8 +60,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
+                
                     <li class="nav-item">
-                        <a class="nav-link active" href="posting.php">All content</a>
+                        <a class="nav-link active" href="#">All content</a>
+                        <ul class="dropd">
+                            <li><a href="posting_special_content.php">special content</a></li>
+                            <li><a href="posting.php">regular content</a></li>
+                        </ul>
                     </li>
 
                     <?php					   	

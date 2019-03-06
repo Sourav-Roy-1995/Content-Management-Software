@@ -155,7 +155,7 @@
         <div class="col-lg-9 content-top">
             <div class="content-update">
                 <div class="add_content">
-                    <h2>Add Content</h2>
+                    <h2>Add Special Content</h2>
                     <form id="add_content_form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" >
                     <div class="form" >
                     <div class="col-md-12">
@@ -181,11 +181,12 @@
                 </div>
                 <?php   
                                    
-                require("connection.php");          
-                // $result = mysqli_query($conn,"SELECT * FROM content order by id desc limit 1");    
+                require("connection.php");   
+                       
+                // $result = mysqli_query($conn,"SELECT * FROM special_content order by id desc limit 1");    
                 
                 $result = mysqli_query($conn, "SELECT *FROM business
-                INNER JOIN content  ON content.name=business.name
+                INNER JOIN special_content  ON special_content.name=business.name
                 WHERE business.writer = '".$writer_name."' ");
 
                 if(mysqli_num_rows($result) > 0){
@@ -351,7 +352,7 @@ var id = $(this).attr("id");
 if(id != '')  
 {  
     $.ajax({  
-            url:"modal_admin_one.php",  
+            url:"modal_admin_special_content.php",  
             method:"POST",  
             data:{id:id},  
             success:function(data){  
@@ -405,7 +406,7 @@ var vision =  $('#vision').val();
 var comment =  $('#comment').val();
 
 $.ajax({
-    url      : 'edit_content.php',
+    url      : 'edit_special_content.php',
     method   : 'post', 
     data     : {name : name , date: date , post_material : post_material , tags: tags , poster_material:poster_material , vision:vision , comment:comment ,  id: id},
     success  : function(response){
@@ -464,7 +465,7 @@ $(document).ready(function(){
 $('#add_content_form').submit(function(event){
 $.ajax({
 dataType: 'JSON',
-url: 'add_content_system.php',
+url: 'add_special_content_system.php',
 type: 'POST',
 data: $('#add_content_form').serialize(),
 beforeSend: function(){
@@ -517,7 +518,7 @@ $(document).ready(function (){
     if(date != '' && writer_name != '' && active != '')  
     {  
             $.ajax({  
-                url:"filter_content_writer.php",  
+                url:"filter_special_content_writer.php",  
                 method:"POST",  
                 data:{date:date,writer_name:writer_name,active:active},  
                 success:function(data)  
@@ -556,7 +557,7 @@ $('#filter').click(function(){
     if(date != '' && writer_name != '' && active != '')   
     {  
             $.ajax({  
-                url:"filter_content_writer.php",  
+                url:"filter_special_content_writer.php",  
                 method:"POST",  
                 data:{date:date,writer_name:writer_name,active:active},  
                 success:function(data)  
@@ -594,7 +595,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin_two.php",  
+                url:"filter_special_content_admin_two.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  
@@ -625,7 +626,7 @@ $(document).ready(function(){
         if(name != '')  
         {  
                 $.ajax({  
-                    url:"filter_tags.php",  
+                    url:"filter_special_tags.php",  
                     method:"POST",  
                     data:{name:name},  
                     success:function(data)  

@@ -203,7 +203,7 @@ var id = $(this).attr("id");
 if(id != '')  
 {  
     $.ajax({  
-            url:"modal_admin_one.php",  
+            url:"modal_admin_special_content.php",  
             method:"POST",  
             data:{id:id},  
             success:function(data){  
@@ -276,7 +276,7 @@ $(document).ready(function (){
     if(date != '' && active != '')  
     {  
             $.ajax({  
-                url:"filter_content_guestrelation.php",  
+                url:"filter_special_content_guestrelation.php",  
                 method:"POST",  
                 data:{date:date,active:active},  
                 success:function(data)  
@@ -314,7 +314,7 @@ $('#filter').click(function(){
     if(date != ''  && active != '')  
     {  
             $.ajax({  
-                url:"filter_content_guestrelation.php",  
+                url:"filter_special_content_guestrelation.php",  
                 method:"POST",  
                 data:{date:date,active:active},  
                 success:function(data)  
@@ -352,7 +352,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin_two.php",  
+                url:"filter_special_content_admin_two.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  
