@@ -354,7 +354,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_special_content_admin_two.php",  
+                url:"filter_special_content_with_name.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  

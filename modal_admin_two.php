@@ -39,8 +39,8 @@ while($row = mysqli_fetch_array($result))
 </table>
 <div class="social">
     <ul>
-        <li><a href="https://<?php echo $row["trip_url"];?>">TripAdvisor</a></li>
-        <li><a href="https://<?php echo $row["website_url"];?>">Website</a></li>
+        <li><a href="<?php echo $row["trip_url"];?>" target="_blank">TripAdvisor</a></li>
+        <li><a href="<?php echo $row["website_url"];?>" target="_blank">Website</a></li>
     </ul>
 </div>
 

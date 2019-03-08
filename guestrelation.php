@@ -352,7 +352,7 @@ $('.sourcelink').click(function(){
     if( date != '' && name != '')  
     {  
             $.ajax({  
-                url:"filter_content_admin_two.php",  
+                url:"filter_content_with_name.php",  
                 method:"POST",  
                 data:{date:date, name:name},  
                 success:function(data)  

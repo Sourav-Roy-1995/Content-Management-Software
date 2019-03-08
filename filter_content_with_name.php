@@ -1,22 +1,14 @@
 <!--===============================================
                     Start all-content
 ================================================-->
- 
 <?php                          
 require("connection.php");         
-if(isset($_POST["date"]))     
+if(isset($_POST["name"]))     
 {
+$name = mysqli_real_escape_string($conn, $_POST['name']);
 $date = mysqli_real_escape_string($conn, $_POST['date']);
-$posting_name = mysqli_real_escape_string($conn, $_POST['posting_name']);
-$active = mysqli_real_escape_string($conn, $_POST['active']);
-
-// $result = mysqli_query($conn,"SELECT * FROM content WHERE date= '".$date."' ");
-
-$result = mysqli_query($conn, "SELECT *FROM business
-INNER JOIN content  ON content.name=business.name
-WHERE date= '".$date."'  AND business.posting = '".$posting_name."' AND business.bs_status = '".$active."' ");
-
-
+$result = mysqli_query($conn, "SELECT *FROM content
+WHERE date= '".$date."' AND name= '".$name."' ");
 if(mysqli_num_rows($result) > 0){
 ?>
 <div class="content-update" id="content_table" style="margin:0px">
@@ -55,8 +47,11 @@ $comment         =     $row['comment'] ;
 <td data-target="poster_material" class="one_line"><?php echo $poster_material;?></td>
 <td data-target="vision" class="one_line d-none"><?php echo $vision;?></td>
 <td data-target="comment" class="one_line d-none"><?php echo $comment;?></td>
+
 <td class="btn-group custom-table" role="group">
-<input type="button" name="view" value="View" id="<?php echo $row["id"]; ?>" class="btn btn-info view_data" /> </td>
+    <input type="button" name="view" value="View" id="<?php echo $row["id"]; ?>" class="btn btn-info view_data" /> 
+</td>
+
 </tr>
 <?php
 }
