@@ -58,7 +58,7 @@ $comment         =     $row['comment'] ;
 
 <td>
     <div class="btn-group custom-table-2" role="group">
-        <a href="#" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
+        <a href="#<?php echo $row['id'] ;?>" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
     </div>
 </td>
 

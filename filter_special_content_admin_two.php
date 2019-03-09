@@ -57,16 +57,16 @@ $status         =      $row['status'];
 
 <td>
     <div class="btn-group custom-table" role="group">
-        <a href="#" id="update_status" class="btn btn-info btn-sm done-btn" data-role="update_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-check"></i></a>
+        <a href="#update_status" id="update_status" class="btn btn-info btn-sm done-btn" data-role="update_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-check"></i></a>
 
-        <a href="#" id="cancel_status" class="btn btn-info btn-sm done-btn" data-role="cancel_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-times"></i></a>
+        <a href="#cancel_status" id="cancel_status" class="btn btn-info btn-sm done-btn" data-role="cancel_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-times"></i></a>
     </div>
 </td>
 
 <td>
     <div class="btn-group custom-table-2" role="group">
-        <a href="#" class="btn btn-info btn-sm" data-role="update" data-id="<?php echo $row['id'] ;?>">Edit</a>
-        <a href="#" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
+        <a href="#<?php echo $row['id'];?>" class="btn btn-info btn-sm" data-role="update" data-id="<?php echo $row['id'];?>">Edit</a>
+        <a href="#<?php echo $row['id'];?>" name="view" id="<?php echo $row["id"];?>" class="btn btn-info btn-sm view_data">View</a> 
     </div>
 </td>
 

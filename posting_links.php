@@ -145,7 +145,7 @@ Start all-content
                 <th scope="col">facebook URL</th>
                 <th scope="col">Twitter URL</th>
                 <th scope="col">Instagram URL</th>
-                <th scope="col">Action</th>
+                <th scope="col">Login Info</th>
             </tr>
         </thead>
         <tbody>
@@ -161,8 +161,11 @@ Start all-content
                 <td class="one_line url"><a href="<?php echo $row['fb_url']?>" target="_blank">Facebook.com</a></td>
                 <td class="one_line url"><a href="<?php echo $row['twitter_url']?>" target="_blank">Twitter.com</a></td>
                 <td class="one_line url"><a href="<?php echo $row['insta_url']?>" target="_blank">instagram.com</a></td>
-                <td class="one_line"><input type="button" name="view" value="Login Info" id="<?php echo $row["id"]; ?>" class="btn btn-info view_data" /> 
+
+                <td class="one_line">
+                   <a href="#" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
                 </td>
+
             </tr>
             <?php                                  
             }

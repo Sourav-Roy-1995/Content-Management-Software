@@ -26,18 +26,27 @@ while($row = mysqli_fetch_array($result))
 
     </div>
 
-    <div class="modal-item">
-        <span>Post Material</span>
-        <textarea rows="5" class="note-add"  onclick="copy_post_material()" readonly ><?php echo $row["post_material"];?></textarea>
-    </div>
-    <div class="modal-item">
-        <span>Tags</span>
-        <textarea rows="5" class="note-add"  onclick="copy_tags()" readonly><?php echo $row["tags"];?></textarea>
-    </div>
+<div class="modal-item">
+<span>Post Material & Tags</span>
+<textarea rows="5" class="note-add"  onclick="copy_tags_post_material()" readonly >
+<?php echo $row["post_material"];?>
+        
+
+<?php echo $row["tags"];?>
+</textarea>
+</div>
+
+<!-- <div class="modal-item">
+    <span>Tags</span>
+    <textarea rows="5" class="note-add"  onclick="copy_tags()" readonly><?php echo $row["tags"];?></textarea>
+</div> -->
+
+
     <div class="modal-item">
         <span>Poster Material</span>
         <textarea rows="5" class="note-add" onclick="copy_poster_material()" readonly><?php echo $row["poster_material"];?></textarea>
     </div>
+
     <div class="modal-item">
         <span>Vision</span>
         <textarea rows="5" class="note-add" onclick="copy_vision()" readonly><?php echo $row["vision"];?></textarea>

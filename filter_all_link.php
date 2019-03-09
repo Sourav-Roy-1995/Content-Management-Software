@@ -20,18 +20,22 @@ $id=$row['id'];
             <th scope="col">facebook URL</th>
             <th scope="col">Twitter URL</th>
             <th scope="col">Instagram URL</th>
-            <th scope="col">Action</th>
+            <th scope="col">Login Info</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td class="one_line"><?php echo $row['name']?></td>
             <td class="one_line"><?php echo $row['package']?></td>
-            <td class="one_line"><a href="<?php echo $row['fb_url']?>" target="_blank">Facebook.com</a></td>
-            <td class="one_line"><a href="<?php echo $row['twitter_url']?>" target="_blank">Twitter.com</a></td>
-            <td class="one_line"><a href="<?php echo $row['insta_url']?>" target="_blank">instagram.com</a></td>
-            <td class="one_line"><input type="button" name="view" value="Login Info" id="<?php echo $row["id"]; ?>" class="btn btn-info view_data" /> 
+            <td class="one_line url"><a href="<?php echo $row['fb_url']?>" 
+            target="_blank">Facebook.com</a></td>
+            <td class="one_line url"><a href="<?php echo $row['twitter_url']?>" target="_blank">Twitter.com</a></td>
+            <td class="one_line url"><a href="<?php echo $row['insta_url']?>" target="_blank">instagram.com</a></td>
+
+            <td class="one_line">
+                <a href="#<?php echo $row['id'];?>" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
             </td>
+
         </tr>
         
     </tbody>
@@ -43,3 +47,17 @@ $id=$row['id'];
 ?>
        
 
+
+
+<!-- If link is null-->
+<script>
+
+    $("td.url a").each(function (i) {
+        if ($(this).attr('href') == '') { 
+            $(this).hide();
+        } else {
+            $(this).show();
+        }
+    });
+
+</script> <!-- If link is null-->

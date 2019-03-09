@@ -57,15 +57,15 @@ $status         =      $row['status'];
 
 <td>
     <div class="btn-group custom-table" role="group">
-        <a href="#" id="update_status" class="btn btn-info btn-sm done-btn" data-role="update_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-check"></i></a>
+        <a href="#update_status" id="update_status" class="btn btn-info btn-sm done-btn" data-role="update_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-check"></i></a>
 
-        <a href="#" id="cancel_status" class="btn btn-info btn-sm done-btn" data-role="cancel_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-times"></i></a>
+        <a href="#cancel_status" id="cancel_status" class="btn btn-info btn-sm done-btn" data-role="cancel_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-times"></i></a>
     </div>
 </td>
 
 <td>
     <div class="btn-group custom-table-2" role="group">
-        <a href="#" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
+        <a href="#<?php echo $row['id'];?>" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
     </div>
 </td>
 
@@ -81,23 +81,24 @@ $status         =      $row['status'];
 ?> <!--End Get Content --> 
        
 
+
+
 <!-- Change Status with ajax-->
 <script>
 $(document).ready(function(){
-
 // now create event to get data from fields and update in database 
 $(document).on('click','a[data-role=update_status]',function(){
 
 var id  = $(this).data('id');
-var status_done  = $('#'+id).children('td[data-target=status_done]').text();
+var updated_status  = $('#'+id).children('td[data-target=status_done]').text();
 
 $.ajax({
     url      : 'change_status_system.php',
     method   : 'post', 
-    data     : { status_done:status_done , id: id},
+    data     : { updated_status:updated_status , id: id},
     success  : function(response){
 // now update user record in table 
-    $('#'+id).children('td[data-target=status]').text(status_done);
+    $('#'+id).children('td[data-target=status]').text(updated_status).removeClass('status').addClass('status_done');
 }
 });
 });
@@ -106,16 +107,45 @@ $.ajax({
 <!-- Change Status with ajax-->
 
 
-<!-- If Status is Processing-->
+<!-- Cancel Status with ajax-->
 <script>
+$(document).ready(function(){
+// now create event to get data from fields and update in database 
+$(document).on('click','a[data-role=cancel_status]',function(){
 
+var id  = $(this).data('id');
+var updated_status  = $('#'+id).children('td[data-target=status_cancel]').text();
+
+$.ajax({
+    url      : 'change_status_system.php',
+    method   : 'post', 
+    data     : { updated_status:updated_status , id: id},
+    success  : function(response){
+// now update user record in table 
+    $('#'+id).children('td[data-target=status]').text(updated_status).addClass('status').removeClass('status_done');
+}
+});
+});
+});
+</script>
+<!-- Cancel Status with ajax-->
+
+
+
+<!-- If Status is Null-->
+<script>
     $(".status").each(function (i) {
         if ($(this).html() == '') { 
             $(this).html('Processing');
-        } else {
+        } 
+
+        else if ($(this).html() == 'Processing') { 
+            $(this).addClass('status').removeClass('status_done');
+        } 
+
+        else {
             $(this).removeClass('status').addClass('status_done');
         }
     });
 
-
-</script> <!-- If Status is Processing-->
+</script> <!-- If Status is Null-->
