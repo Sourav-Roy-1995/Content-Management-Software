@@ -165,13 +165,13 @@
 
                         <input type="text" name="date" id="date" class="blue" placeholder="Date"  required>
 
-                        <textarea class="textarea" type="text" name="post_material" placeholder="Post Material" required></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="post_material" placeholder="Post Material" required></textarea>
 
-                        <textarea class="textarea" type="text" name="poster_material" placeholder="Poster Material" required></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="poster_material" placeholder="Poster Material" required></textarea>
 
-                        <textarea class="textarea" type="text" name="vision" placeholder="vision" ></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="vision" placeholder="vision" ></textarea>
                     
-                        <textarea class="textarea" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
 
                         <textarea placeholder="Comments" name="comment" ></textarea>
                     </div>
@@ -398,30 +398,70 @@ $('#destination_one').val($(this).html());
 });
 </script> <!-- Taking input from button with js-->
 
+
+
 <!-- Add content with ajax-->
 <script>
-$(document).ready(function(){
-$('#add_content_form').submit(function(event){
-$.ajax({
-dataType: 'JSON',
-url: 'add_special_content_system.php',
-type: 'POST',
-data: $('#add_content_form').serialize(),
-beforeSend: function(){
-    $('.txt').html('SENDING...');
-},
-complete: function(){
-    $('.txt').html('SEND');
-},
-error: function(){
-    $('#msg').html('<div class="alert alert-danger">Please Fillup Properly, and Try Again.</div>');
-}
-});
 
-$('.msg').html('<div class="alert alert-success">Content successfuly Saved.</div>').hide().fadeIn(1500).fadeOut(3000);
-// $('#add_content_form')[0].reset();
-return false;
-});
+// Variable to hold request
+var request;
+
+// Bind to the submit event of our form
+$("#add_content_form").submit(function(event){
+
+    // Prevent default posting of form - put here to work in case of errors
+    event.preventDefault();
+
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+
+    // Let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+    var $clear_inputs = $form.find(".clear-txt");
+
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    //$inputs.prop("disabled", true);
+
+    // Fire off the request to /form.php
+    request = $.ajax({
+        url: "add_special_content_system.php",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        $('.msg').html('<div class="alert alert-success">Content successfuly Saved.</div>').hide().fadeIn(1500).fadeOut(3000);
+        $clear_inputs.val('');
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (response, textStatus, jqXHR){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+       //$inputs.prop("disabled", false);
+        
+    });
+
 });
 </script> <!-- Add content with ajax-->
 

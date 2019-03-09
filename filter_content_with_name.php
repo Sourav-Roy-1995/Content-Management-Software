@@ -21,7 +21,7 @@ if(mysqli_num_rows($result) > 0){
 <th scope="col">Date</th>
 <th scope="col">Post Material</th>
 <th scope="col" class="d-none">Tags</th>
-<th scope="col">Poster Material</th>
+<th scope="col" class="d-none">Poster Material</th>
 <th scope="col" class="d-none">Vision</th>
 <th scope="col" class="d-none">Comment</th>
 <th scope="col">Action</th>
@@ -44,12 +44,14 @@ $comment         =     $row['comment'] ;
 <td data-target="date" class="one_line"><?php echo $date;?></td>
 <td data-target="post_material" class="one_line"><?php echo $post_material;?></td>
 <td data-target="tags" class="one_line d-none"><?php echo $tags;?></td>
-<td data-target="poster_material" class="one_line"><?php echo $poster_material;?></td>
+<td data-target="poster_material" class="one_line d-none"><?php echo $poster_material;?></td>
 <td data-target="vision" class="one_line d-none"><?php echo $vision;?></td>
 <td data-target="comment" class="one_line d-none"><?php echo $comment;?></td>
 
-<td class="btn-group custom-table" role="group">
-    <input type="button" name="view" value="View" id="<?php echo $row["id"]; ?>" class="btn btn-info view_data" /> 
+<td>
+    <div class="btn-group custom-table-2" role="group">
+        <a href="#" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
+    </div>
 </td>
 
 </tr>

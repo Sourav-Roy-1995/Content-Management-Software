@@ -166,15 +166,15 @@
 
                         <input type="text" name="date" id="date" class="blue" placeholder="Date"  required>
 
-                        <textarea class="textarea" type="text" name="post_material" placeholder="Post Material" required></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="post_material" placeholder="Post Material" required></textarea>
 
-                        <textarea class="textarea" type="text" name="poster_material" placeholder="Poster Material" required></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="poster_material" placeholder="Poster Material" required></textarea>
 
-                        <textarea class="textarea" type="text" name="vision" placeholder="vision" ></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="vision" placeholder="vision" ></textarea>
                     
-                        <textarea class="textarea" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
 
-                        <textarea placeholder="Comments" name="comment" ></textarea>
+                        <textarea class="clear-txt" placeholder="Comments" name="comment" ></textarea>
                     </div>
                     <button name="submit" class="btn btn-info text-right txt" id="add_content_btn">save</button>
             
@@ -440,13 +440,15 @@ $("#add_content_form").submit(function(event){
     // Let's select and cache all the fields
     var $inputs = $form.find("input, select, button, textarea");
 
+    var $clear_inputs = $form.find(".clear-txt");
+
     // Serialize the data in the form
     var serializedData = $form.serialize();
 
     // Let's disable the inputs for the duration of the Ajax request.
     // Note: we disable elements AFTER the form data has been serialized.
     // Disabled form elements will not be serialized.
-    //$inputs.prop("disabled", true);
+    //$inputs.prop("disabled", false);
 
     // Fire off the request to /form.php
     request = $.ajax({
@@ -459,6 +461,7 @@ $("#add_content_form").submit(function(event){
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         $('.msg').html('<div class="alert alert-success">Content successfuly Saved.</div>').hide().fadeIn(1500).fadeOut(3000);
+        $clear_inputs.val('');
     });
 
     // Callback handler that will be called on failure
