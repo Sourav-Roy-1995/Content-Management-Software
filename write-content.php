@@ -141,7 +141,7 @@
                     <input type="hidden" id="destination_one" value="" class="">
                     <?php
                     require("connection.php");        
-                    $result = mysqli_query($conn, "SELECT * FROM business");
+                    $result = mysqli_query($conn, "SELECT * FROM business order by name");
                     while($row=mysqli_fetch_array($result)){
                     $id=$row['id'];             
                     ?>
@@ -168,7 +168,7 @@
 
                         <textarea class="textarea clear-txt" type="text" name="post_material" placeholder="Post Material" required></textarea>
 
-                        <textarea class="textarea clear-txt" type="text" name="poster_material" placeholder="Poster Material" required></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="poster_material" placeholder="Poster Material"></textarea>
 
                         <textarea class="textarea clear-txt" type="text" name="vision" placeholder="vision" ></textarea>
                     

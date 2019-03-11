@@ -80,6 +80,12 @@ $status         =      $row['status'];
 <?php
 }
 }
+else {
+    ?>
+        <h2>Content is not written yet...<i class="fas fa-long-arrow-alt-right" style="color:#1E1E1E;margin-left:5px;"></i><span style="margin-left:5px;color:#7E3E98;"> <?php echo $_POST["date"]?></span></h2>
+    <?php
+}
+
 }
 ?> 
 </tbody>

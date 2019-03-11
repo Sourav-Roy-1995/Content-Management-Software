@@ -132,7 +132,7 @@
                             <ul id="bs_list">
                             <?php
                             require("connection.php");        
-                            $result = mysqli_query($conn, "SELECT * FROM team");
+                            $result = mysqli_query($conn, "SELECT * FROM team order by team_name");
                             while($row=mysqli_fetch_array($result)){
                             $id=$row['id'];             
                             ?>

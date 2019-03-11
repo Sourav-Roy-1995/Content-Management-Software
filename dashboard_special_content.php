@@ -146,7 +146,7 @@ date_default_timezone_set('Asia/Dhaka');
                 <input type="hidden" id="destination_one" value="" class="">
                 <?php
                 require("connection.php");        
-                $result = mysqli_query($conn, "SELECT * FROM business");
+                $result = mysqli_query($conn, "SELECT * FROM business order by name");
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>

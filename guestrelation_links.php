@@ -117,14 +117,13 @@ Start all-content
     </div>
     <!--Get Business Name -->
     <ul id="bs_list">
-    <input type="hidden" id="destination_one" value="" class="">
     <?php
     require("connection.php");        
-    $result = mysqli_query($conn, "SELECT * FROM business WHERE bs_status = '".$active."' ");
+    $result = mysqli_query($conn, "SELECT * FROM business WHERE bs_status = '".$active."' order by name");
     while($row=mysqli_fetch_array($result)){
     $id=$row['id'];             
     ?>
-    <li><a href="#" class="sourcelink"><?php echo $row['name']?></a></li>
+    <li><a href="#" class="sourcelink" id="<?php echo $row["id"]; ?>"><?php echo $row['name']?></a></li>
     <?php
     }
     ?>   
@@ -135,7 +134,7 @@ Start all-content
 </div>
 <div class="col-lg-9 content-top">
 <div class="content-update">
-<h2>Content</h2>
+<h2>Business Links</h2>
 <div class="table-content" id="content_table">
     <table class="table table-bordered text-center">
         <thead>
@@ -269,14 +268,15 @@ $(function(){
     $("#destination_one");   
 });  
 $('.sourcelink').click(function(){  
-    var name = $('#destination_one').val();  
+    //var name = $('#destination_one').val();  
+    var id = $(this).attr("id");  
         
-    if(name != '')  
+    if(id != '')  
     {  
         $.ajax({  
             url:"filter_all_link.php",  
             method:"POST",  
-            data:{name:name},  
+            data:{id:id},  
             success:function(data)  
             {  
                 $('#content_table').html(data);  

@@ -128,7 +128,7 @@
                             <ul id="bs_list">
                                 <?php
                                 require("connection.php");        
-                                $result = mysqli_query($conn, "SELECT * FROM user");
+                                $result = mysqli_query($conn, "SELECT * FROM user order by name");
                                 while($row=mysqli_fetch_array($result)){
                                 $id=$row['id'];             
                                 ?>

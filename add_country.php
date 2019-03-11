@@ -128,7 +128,7 @@
                             <ul id="bs_list">
                             <?php
                             require("connection.php");        
-                            $result = mysqli_query($conn, "SELECT * FROM country");
+                            $result = mysqli_query($conn, "SELECT * FROM country order by country_type");
                             while($row=mysqli_fetch_array($result)){
                             $id=$row['id'];             
                             ?>

@@ -131,7 +131,7 @@
                 <ul id="bs_list">
                 <?php
                 require("connection.php");        
-                $result = mysqli_query($conn, "SELECT * FROM business");
+                $result = mysqli_query($conn, "SELECT * FROM business order by name");
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>

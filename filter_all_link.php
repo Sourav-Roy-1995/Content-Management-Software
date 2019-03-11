@@ -5,8 +5,8 @@
  
 <?php					   	
 require("connection.php");
-$business_name = mysqli_real_escape_string($conn, $_POST['name']);					
-$result = mysqli_query($conn,"SELECT * FROM business WHERE name= '".$business_name."'");
+$business_id= mysqli_real_escape_string($conn, $_POST['id']);					
+$result = mysqli_query($conn,"SELECT * FROM business WHERE id= '".$business_id."'");
 while($row=mysqli_fetch_array($result)){
 $id=$row['id'];
 ?>

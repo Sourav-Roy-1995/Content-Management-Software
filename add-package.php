@@ -128,8 +128,8 @@
                             <!--Get Package Name -->
                             <ul id="bs_list">
                             <?php
-                            require("connection.php");        
-                            $result = mysqli_query($conn, "SELECT * FROM package");
+                            require("connection.php");         
+                            $result = mysqli_query($conn, "SELECT * FROM package order by package_type");
                             while($row=mysqli_fetch_array($result)){
                             $id=$row['id'];             
                             ?>

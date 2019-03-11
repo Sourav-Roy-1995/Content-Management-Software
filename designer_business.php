@@ -121,7 +121,7 @@
                 <ul id="bs_list">
                 <?php
                 require("connection.php");        
-                $result = mysqli_query($conn, "SELECT * FROM business WHERE designer =  '".$designer_name."' AND bs_status = '".$active."' ");
+                $result = mysqli_query($conn, "SELECT * FROM business WHERE designer =  '".$designer_name."' AND bs_status = '".$active."' order by name");
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>
