@@ -145,7 +145,7 @@
                     while($row=mysqli_fetch_array($result)){
                     $id=$row['id'];             
                     ?>
-                    <li><a href="#" class="sourcelink" id="bs-link"><?php echo $row['name']?></a></li>
+                    <li><a href="#" class="sourcelink"><?php echo $row['name']?></a></li>
                     <?php
                     }
                     ?>   
@@ -172,7 +172,7 @@
 
                         <textarea class="textarea clear-txt" type="text" name="vision" placeholder="vision" ></textarea>
                     
-                        <textarea class="textarea clear-txt" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
+                        <textarea class="textarea" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
 
                         <textarea class="clear-txt" placeholder="Comments" name="comment" ></textarea>
                     </div>
@@ -182,12 +182,12 @@
                  </div>
                 </div><!--[/End table-content]-->
 
-                    <!--Get Content --> 
-                    <div id="content_table">
-                        <div class="table-content">
+            <!--Get Content --> 
+            <div class="content-top">
+                <div class="content-update" id="content_table">
 
-                        </div>
-                    </div><!--End Get Content --> 
+                </div>
+            </div><!--End Get Content --> 
 
         </div>
     </div>
@@ -411,7 +411,7 @@ $('input[name="date"]').val($(this).val());
 <script type="text/javascript">
 
 $(document).ready(function() {
-$('.sourcelink').click(function() {
+$('.sourcelink').click(function(){
 $('#destination_two').val($(this).html());
 $('#destination_one').val($(this).html());
 });

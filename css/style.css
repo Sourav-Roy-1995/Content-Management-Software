@@ -448,6 +448,10 @@ a.btn-info:hover {
     background: #fff;
     margin-bottom: 10px;
     position: relative;
+    position: fixed;
+    width: 304.5px;
+    top: 98px;
+    left: 10px;
 }
 .add_content {
 	margin-bottom: 40px;
@@ -460,7 +464,7 @@ a.btn-info:hover {
 
 .filter-section button {
     position: absolute;
-    right: 0px;
+    right: 0;
     border: none;
     background: #7E3E98;
     padding: 5px 15px;
@@ -470,11 +474,19 @@ a.btn-info:hover {
 
 .search-section {
     overflow: hidden;
-    border-radius: 35px;
+    border-radius: 0;
     margin-bottom: 10px;
     padding: 10px;
+    position: fixed;
+    background: #fff;
+    top: 136px;
+    width: 304.5px;
+    border-top: 10px solid #F4F5F9;
 }
-
+.search-section.custom_sidebar {
+    position: fixed;
+    top: 96px;
+}
 .search-section input {
     border: none;
     padding: 6px 16px;
@@ -485,19 +497,22 @@ a.btn-info:hover {
 }
 
 .sidebar-menu {
-    background: #fff;
     padding: 0 5px;
     height: 100%;
 }
 
 .sidebar-menu ul {
     list-style: none;
+    padding-top: 34%;
 }
-
+.sidebar-menu ul.custom_list {
+    padding-top: 57px !important;
+    width: 304.5px;
+}
 .sidebar-menu ul li {
     box-shadow: 0px 0px 3px 0px rgba(183, 190, 230, 0.43);
     background-color: #F4F5F9;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
 }
 
 .sidebar-menu ul li a {
@@ -1047,4 +1062,8 @@ ul.dropd li a{
 
 .view_data{
     width:50px;
+}
+
+#bs_list{
+    width:304.5px;
 }

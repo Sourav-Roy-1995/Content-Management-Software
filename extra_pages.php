@@ -125,11 +125,11 @@
                 <div class="col-lg-3">
                     <div class="sidebar-area">
                         <div class="sidebar-menu">
-                            <div class="search-section">
+                            <div class="search-section custom_sidebar">
                                 <input type="text" id="search_input" placeholder="search">
                             </div>
                             <!--Get Team Name -->
-                            <ul id="bs_list">
+                            <ul id="bs_list" class="custom_list">
                             <?php
                             require("connection.php");        
                             $result = mysqli_query($conn, "SELECT * FROM team order by team_name");

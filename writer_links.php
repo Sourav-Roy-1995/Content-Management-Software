@@ -98,11 +98,11 @@ $id=$row['id'];
 <div id="nav-item">
 <a class="nav-link dropdown" href=""><span>hello</span> <?php echo $writer_name; ?> <i class="fa fa-user user"></i></a>
 <div class="logout">
-            <ul>
-                <li><a href="#"><i class="fas fa-cogs lgo"></i>setting</a></li>
-                <li><a href="counter_writer.php"><i class="fas fa-calculator lgo"></i>Counter</a></li>
-                <li><a href="logout.php"><i class="fas fa-sign-out-alt lgo"></i>LogOut</a></li>
-            </ul>
+    <ul>
+        <li><a href="#"><i class="fas fa-cogs lgo"></i>setting</a></li>
+        <li><a href="counter_writer.php"><i class="fas fa-calculator lgo"></i>Counter</a></li>
+        <li><a href="logout.php"><i class="fas fa-sign-out-alt lgo"></i>LogOut</a></li>
+    </ul>
 </div>
 </div>
 </div>
@@ -119,11 +119,11 @@ Start all-content
 <div class="col-lg-3">
 <div class="sidebar-area">
 <div class="sidebar-menu">
-    <div class="search-section">
+    <div class="search-section custom_sidebar">
          <input type="text" id="search_input" placeholder="search">
     </div>
     <!--Get Business Name -->
-    <ul id="bs_list">
+    <ul id="bs_list" class="custom_list">
     <?php
     require("connection.php");        
     $result = mysqli_query($conn, "SELECT * FROM business WHERE writer =  '".$writer_name."' AND bs_status = '".$active."' order by name");
