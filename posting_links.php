@@ -216,7 +216,7 @@ Start all-content
 <script type="text/javascript">
 $(document).ready(function() {
 $('.sourcelink').click(function() {
-$('#destination_one').val($(this).html());
+$('#destination_one').val($(this).text());
 });
 });
 </script>

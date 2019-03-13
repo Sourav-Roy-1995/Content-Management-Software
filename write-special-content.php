@@ -414,8 +414,8 @@ $('input[name="date"]').val($(this).val());
 
 $(document).ready(function() {
 $('.sourcelink').click(function() {
-$('#destination_two').val($(this).html());
-$('#destination_one').val($(this).html());
+$('#destination_two').val($(this).text());
+$('#destination_one').val($(this).text());
 });
 });
 </script> <!-- Taking input from button with js-->

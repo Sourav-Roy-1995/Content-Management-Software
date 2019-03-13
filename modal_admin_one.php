@@ -16,11 +16,11 @@ while($row = mysqli_fetch_array($result))
 
         <div class="row">
             <div class="col-md-6">
-                <textarea style="width:104%;margin-left:-10px;" rows="1" class="note-add" onclick="copy_name()" readonly><?php echo $row["name"]?></textarea>
+                <textarea style="width:104%;margin-left:-10px;" rows="1" class="note-add bs_name" onclick="copy_name()" readonly><?php echo $row["name"]?></textarea>
             </div>
 
             <div class="col-md-6">
-                <textarea style="width:104%;margin-left:-10px;" rows="1" class="note-add"  onclick="copy_date()" readonly><?php echo $row["date"];?></textarea>
+                <textarea style="width:104%;margin-left:-10px;" rows="1" class="note-add content_date"  onclick="copy_date()" readonly><?php echo $row["date"];?></textarea>
             </div>
         </div>
 
@@ -28,7 +28,7 @@ while($row = mysqli_fetch_array($result))
 
 <div class="modal-item">
 <span>Post Material & Tags</span>
-<textarea rows="5" class="note-add"  onclick="copy_tags_post_material()" readonly >
+<textarea rows="5" class="note-add post_material_tags"  onclick="copy_tags_post_material()" readonly >
 <?php echo $row["post_material"];?>
         
 
@@ -43,17 +43,17 @@ while($row = mysqli_fetch_array($result))
 
     <div class="modal-item">
         <span>Poster Material</span>
-        <textarea rows="5" class="note-add" onclick="copy_poster_material()" readonly><?php echo $row["poster_material"];?></textarea>
+        <textarea rows="5" class="note-add poster_material" onclick="copy_poster_material()" readonly><?php echo $row["poster_material"];?></textarea>
     </div>
 
     <div class="modal-item">
         <span>Vision</span>
-        <textarea rows="5" class="note-add" onclick="copy_vision()" readonly><?php echo $row["vision"];?></textarea>
+        <textarea rows="5" class="note-add vision" onclick="copy_vision()" readonly><?php echo $row["vision"];?></textarea>
     </div>
 
     <div class="modal-item">
         <span>Comment</span>
-        <textarea rows="5" class="note-add" onclick="copy_comment()" readonly><?php echo $row["comment"];?></textarea>
+        <textarea rows="5" class="note-add comment" onclick="copy_comment()" readonly><?php echo $row["comment"];?></textarea>
     </div>
 
 <?php
@@ -61,3 +61,13 @@ while($row = mysqli_fetch_array($result))
 }
 
 ?>
+
+
+
+<script>
+function copy_name() {
+  var copyText = document.getElementsByClassName("bs_name");
+  copyText.select();
+  document.execCommand("copy");
+}
+</script>
