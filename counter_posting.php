@@ -224,7 +224,7 @@
                                                     <p class="card-text"><small class="bg-4">C</small><?php echo $row['package_type']; ?></p>
                                                     <?php                         
                                                     require("connection.php");         
-                                                    $result_type_bs = mysqli_query($conn,"SELECT *FROM business where package = '".$type ."' ");
+                                                    $result_type_bs = mysqli_query($conn,"SELECT *FROM business where package = '".$type ."' AND bs_status = '".$active."' ");
                                                     $num_type_business = mysqli_num_rows($result_type_bs);
                                                     
                                                     ?>
@@ -271,7 +271,7 @@
                                                     <p class="card-text"><small class="bg-7">C</small><?php echo $row['team_name']; ?></p>
                                                     <?php                         
                                                     require("connection.php");       
-                                                    $result_team_bs = mysqli_query($conn,"SELECT *FROM business where team_name = '".$team."' ");
+                                                    $result_team_bs = mysqli_query($conn,"SELECT *FROM business where team_name = '".$team."' AND bs_status = '".$active."' ");
                                                     $num_team_business = mysqli_num_rows($result_team_bs);
                                                     
                                                     ?>
@@ -306,7 +306,7 @@
                                         <!-- Button trigger modal -->
                                         <?php                       
                                         require("connection.php");                 
-                                        $result = mysqli_query($conn,"SELECT country FROM business GROUP BY country");
+                                        $result = mysqli_query($conn,"SELECT country FROM business WHERE bs_status = '".$active."' GROUP BY country");
                                         while($row=mysqli_fetch_array($result)){
                                         $id=$row['id'];
                                         $country_name = $row['country'];
@@ -319,7 +319,7 @@
                                                     <p class="card-text"><small class="bg-8">C</small><?php echo $row['country']; ?></p>
                                                     <?php                         
                                                     require("connection.php");       
-                                                    $result_country_bs = mysqli_query($conn,"SELECT *FROM business where country = '".$country_name."' ");
+                                                    $result_country_bs = mysqli_query($conn,"SELECT *FROM business where country = '".$country_name."' AND bs_status = '".$active."' ");
                                                     $num_country_business = mysqli_num_rows($result_country_bs);
                                                     
                                                     ?>

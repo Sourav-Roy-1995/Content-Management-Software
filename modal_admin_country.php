@@ -2,8 +2,9 @@
 if(isset($_POST["country_name"]))  
 {   
 require('connection.php');
+$active = "active";
 $country_name = mysqli_real_escape_string($conn, $_POST['country_name']);
-$query =   "SELECT *FROM business WHERE country= '".$country_name."' ";
+$query =   "SELECT *FROM business WHERE country= '".$country_name."' AND bs_status = '".$active."' ";
 $result = mysqli_query($conn, $query);
 ?>
 <div class="modal-header">

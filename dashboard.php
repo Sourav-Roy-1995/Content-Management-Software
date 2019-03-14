@@ -4,6 +4,7 @@ include "auth/auth_admin.php"
 
 <?php 
 $admin_name =  $_SESSION["name"];
+$active = "active";
 ?>
 
 <?php
@@ -23,6 +24,7 @@ date_default_timezone_set('Asia/Dhaka');
 <meta name="keywords" content="HTML,CSS,JavaScript">
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- <meta http-equiv="refresh" content="3600;url=logout.php" /> -->
 <title>All Content</title>
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/bootstrap-grid.min.css">

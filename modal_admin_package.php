@@ -2,8 +2,9 @@
 if(isset($_POST["types"]))  
 {   
 require('connection.php');
+$active = "active";
 $types = mysqli_real_escape_string($conn, $_POST['types']);
-$query =   "SELECT *FROM business WHERE package= '".$types."' ";
+$query =   "SELECT *FROM business WHERE package= '".$types."' AND bs_status = '".$active."' ";
 $result = mysqli_query($conn, $query);
 ?>
 <div class="modal-header">

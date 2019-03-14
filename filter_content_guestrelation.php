@@ -26,11 +26,13 @@ if(mysqli_num_rows($result) > 0){
 <tr>
 <th scope="col">Business Name</th>
 <th scope="col">Date</th>
-<th scope="col" >Post Material</th>
+<th scope="col" class="d-none">Post Material</th>
 <th scope="col" class="d-none">Tags</th>
 <th scope="col" class="d-none">Poster Material</th>
 <th scope="col" class="d-none">Vision</th>
 <th scope="col" class="d-none">Comment</th>
+<th scope="col" >Status</th>
+<th scope="col">Change Status</th>
 <th scope="col">Action</th>
 </tr>
 </thead>
@@ -44,16 +46,29 @@ $tags            =     $row['tags']    ;
 $poster_material =     $row['poster_material'];  
 $vision          =     $row['vision']    ;       
 $comment         =     $row['comment'] ;  
+$status         =      $row['status']; 
 ?>            
 <tbody>
 <tr id="<?php echo $row['id']; ?>">
 <td data-target="name" class="one_line"><?php echo $name;?></td>
 <td data-target="date" class="one_line"><?php echo $date;?></td>
-<td data-target="post_material" class="one_line"><?php echo $post_material;?></td>
+<td data-target="post_material" class="one_line d-none"><?php echo $post_material;?></td>
 <td data-target="tags" class="one_line d-none"><?php echo $tags;?></td>
 <td data-target="poster_material" class="one_line d-none"><?php echo $poster_material;?></td>
 <td data-target="vision" class="one_line d-none"><?php echo $vision;?></td>
 <td data-target="comment" class="one_line d-none"><?php echo $comment;?></td>
+<td data-target="status" class="one_line status"><?php echo $status;?></td>
+<td data-target="status_done" class="one_line d-none">Done</td>
+<td data-target="status_cancel" class="one_line d-none">Processing</td>
+
+
+<td>
+    <div class="btn-group custom-table" role="group">
+        <a href="#<?php echo $row['id'];?>" class="btn btn-info btn-sm done-btn" data-role="update_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-check"></i></a>
+
+        <a href="#<?php echo $row['id'];?>" class="btn btn-info btn-sm done-btn" data-role="cancel_status" data-id="<?php echo $row['id'] ;?>" ><i class="fas fa-times"></i></a>
+    </div>
+</td>
 
 <td>
     <div class="btn-group custom-table-2" role="group">
@@ -79,3 +94,69 @@ else {
 ?> <!--End Get Content --> 
        
 
+<!-- Change Status with ajax-->
+<script>
+$(document).ready(function(){
+// now create event to get data from fields and update in database 
+$(document).on('click','a[data-role=update_status]',function(){
+
+var id  = $(this).data('id');
+var updated_status  = $('#'+id).children('td[data-target=status_done]').text();
+
+$.ajax({
+    url      : 'change_status_system_one.php',
+    method   : 'post', 
+    data     : { updated_status:updated_status , id: id},
+    success  : function(response){
+// now update user record in table 
+    $('#'+id).children('td[data-target=status]').text(updated_status).removeClass('status').addClass('status_done');
+}
+});
+});
+});
+</script>
+<!-- Change Status with ajax-->
+
+
+
+<!-- Cancel Status with ajax-->
+<script>
+$(document).ready(function(){
+// now create event to get data from fields and update in database 
+$(document).on('click','a[data-role=cancel_status]',function(){
+
+var id  = $(this).data('id');
+var updated_status  = $('#'+id).children('td[data-target=status_cancel]').text();
+
+$.ajax({
+    url      : 'change_status_system_one.php',
+    method   : 'post', 
+    data     : { updated_status:updated_status , id: id},
+    success  : function(response){
+// now update user record in table 
+    $('#'+id).children('td[data-target=status]').text(updated_status).addClass('status').removeClass('status_done');
+}
+});
+});
+});
+</script>
+<!-- Cancel Status with ajax-->
+
+
+<!-- If Status is Null-->
+<script>
+    $(".status").each(function (i) {
+        if ($(this).html() == '') { 
+            $(this).html('Processing');
+        } 
+
+        else if ($(this).html() == 'Processing') { 
+            $(this).addClass('status').removeClass('status_done');
+        } 
+
+        else {
+            $(this).removeClass('status').addClass('status_done');
+        }
+    });
+
+</script> <!-- If Status is Null-->

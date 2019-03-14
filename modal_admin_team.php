@@ -106,7 +106,8 @@ $team = mysqli_real_escape_string($conn, $_POST['team']);
 
 
 <?php  
-$query =   "SELECT *FROM business WHERE team_name= '".$team."' ";
+$active = "active";
+$query =   "SELECT *FROM business WHERE team_name= '".$team."' AND bs_status = '".$active."' ";
 $result = mysqli_query($conn, $query);
 if(mysqli_num_rows($result) > 0){
 ?>
