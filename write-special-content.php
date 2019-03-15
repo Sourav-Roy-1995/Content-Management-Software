@@ -139,14 +139,14 @@
                     </div>
                     <!--Get Business Name -->
                     <ul id="bs_list">
-                    <input type="hidden" id="destination_one" value="" class="">
+                    <!-- <input type="hidden" id="destination_one" value="" class=""> -->
                     <?php
                     require("connection.php");        
                     $result = mysqli_query($conn, "SELECT * FROM business order by name");
                     while($row=mysqli_fetch_array($result)){
                     $id=$row['id'];             
                     ?>
-                    <li><a href="#" class="sourcelink"><?php echo $row['name']?></a></li>
+                    <li><a href="#" class="sourcelink" name="<?php echo $row['name']?>"><?php echo $row['name']?></a></li>
                     <?php
                     }
                     ?>   
@@ -415,7 +415,7 @@ $('input[name="date"]').val($(this).val());
 $(document).ready(function() {
 $('.sourcelink').click(function() {
 $('#destination_two').val($(this).text());
-$('#destination_one').val($(this).text());
+// $('#destination_one').val($(this).text());
 });
 });
 </script> <!-- Taking input from button with js-->
@@ -574,11 +574,10 @@ $.datepicker.setDefaults({
 
 $(function(){  
     $("#date").datepicker();
-    $("#destination_one");   
 });  
 $('.sourcelink').click(function(){  
     var date = $('#date').val();
-    var name = $('#destination_one').val();  
+    var name = $(this).attr("name");
         
     if( date != '' && name != '')  
     {  
@@ -605,11 +604,8 @@ $('.sourcelink').click(function(){
 <!-- fetching tags with ajax -->
 <script>  
 $(document).ready(function(){  
-    $(function(){  
-        $("#destination_two");   
-    });  
     $('.sourcelink').click(function(){  
-        var name = $('#destination_two').val();  
+        var name = $(this).attr("name");
             
         if(name != '')  
         {  

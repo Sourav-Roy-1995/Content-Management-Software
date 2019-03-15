@@ -143,7 +143,7 @@
                             while($row=mysqli_fetch_array($result)){
                             $id=$row['id'];             
                             ?>
-                                <li><a href="business.php?bs_id=<?php echo $id; ?>" ><?php echo $row['name']?></a></li>
+                                <li><a href="business.php?bs_id=<?php echo $id; ?>" class="sourcelink"><?php echo $row['name']?></a></li>
                             <?php
                             }
                             ?>   

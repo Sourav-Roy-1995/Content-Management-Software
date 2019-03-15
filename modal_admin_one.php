@@ -36,10 +36,6 @@ while($row = mysqli_fetch_array($result))
 </textarea>
 </div>
 
-<!-- <div class="modal-item">
-    <span>Tags</span>
-    <textarea rows="5" class="note-add"  onclick="copy_tags()" readonly><?php echo $row["tags"];?></textarea>
-</div> -->
 
     <div class="modal-item">
         <span>Poster Material</span>

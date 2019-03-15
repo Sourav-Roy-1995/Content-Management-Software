@@ -125,7 +125,7 @@
                 <!--Get Business Name -->
                 <ul id="bs_list">
 
-                <input type="hidden" id="destination_one" value="" class="form-control">
+                <!-- <input type="hidden" id="destination_one" value="" class="form-control"> -->
 
                 <input type="hidden" id="posting_name" class="form-control"  value="<?php echo  $posting_name ?> " > 
 
@@ -138,7 +138,7 @@
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>
-                <li><a href="#" class="sourcelink" id="bs-link"><?php echo $row['name']?></a></li>
+                <li><a href="#" class="sourcelink" name="<?php echo $row['name']?>"><?php echo $row['name']?></a></li>
                 <?php
                 }
                 ?>   
@@ -223,14 +223,13 @@ if(id != '')
 
 
 <!-- Taking input from button with js-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function() {
 $('.sourcelink').click(function() {
 $('#destination_one').val($(this).text());
 });
 });
-</script>
-
+</script> -->
 <!--Taking input from button with js-->
 
 <!-- Search -->
@@ -348,12 +347,11 @@ $.datepicker.setDefaults({
 }); 
 
 $(function(){  
-    $("#date").datepicker();
-    $("#destination_one");   
+    $("#date").datepicker();  
 });  
 $('.sourcelink').click(function(){  
     var date = $('#date').val();
-    var name = $('#destination_one').val();  
+    var name = $(this).attr("name");
         
     if( date != '' && name != '')  
     {  

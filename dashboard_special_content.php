@@ -143,14 +143,14 @@ date_default_timezone_set('Asia/Dhaka');
                 </div>
                 <!--Get Business Name -->
                 <ul id="bs_list">
-                <input type="hidden" id="destination_one" value="" class="">
+                <!-- <input type="hidden" id="destination_one" value="" class=""> -->
                 <?php
                 require("connection.php");        
                 $result = mysqli_query($conn, "SELECT * FROM business order by name");
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>
-                <li><a href="#" class="sourcelink" id="bs-link"><?php echo $row['name']?></a></li>
+                <li><a href="#" class="sourcelink" name="<?php echo $row['name']?>"><?php echo $row['name']?></a></li>
                 <?php
                 }
                 ?>   
@@ -351,13 +351,14 @@ $.ajax({
 
 
 <!-- Taking input from button with js-->
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
 $(document).ready(function() {
 $('.sourcelink').click(function() {
 $('#destination_one').val($(this).text());
 });
 });
-</script>
+</script> -->
 
 <!--Taking input from button with js-->
 
@@ -480,11 +481,10 @@ $.datepicker.setDefaults({
 
 $(function(){  
     $("#date").datepicker();
-    $("#destination_one");   
 });  
 $('.sourcelink').click(function(){  
     var date = $('#date').val();
-    var name = $('#destination_one').val();  
+    var name = $(this).attr("name");
         
     if( date != '' && name != '')  
     {  
