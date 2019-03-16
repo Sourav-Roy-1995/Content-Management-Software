@@ -1068,4 +1068,53 @@ ul.dropd li a{
     width:304.5px;
 }
 
+#all_bs_card {
+    background: #f4f5f9;
+    padding: 7px;
+    width: 102%;
+}
+#all_bs_card h1 {
+    font-size: 30px;
+    text-transform: capitalize;
+    padding: 5px 25px;
+    text-align: center;
+}
+.all-business{
+    margin-top: 10px;
+    width:100%!important;
+}
 
+.business-header {
+    margin-top: 100px;
+    margin-left: -12px;
+}
+
+#business_table_wrapper {
+    width: 100%;
+    margin-top: 19px;
+}
+div.dataTables_wrapper div.dataTables_length label {
+    margin-left: 4px;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap;
+
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    margin-left: 4px;
+}
+
+.page-item.active .page-link {
+    background-color: #7E3E98;
+    border-color: #7E3E98;
+}
+
+.page-link {
+    color: #7E3E98;
+}
+.page-link:hover {
+    color: #7E3E98;
+}

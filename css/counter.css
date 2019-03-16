@@ -312,10 +312,6 @@
 	border-left: 5px solid #7E3E98;
 	margin: 3px 0 !important;
 	display: block;
-	border: ;
-	box-shadow: ;
-	text-shadow: ;
-	border-bottom: ;
 	padding: 3px;
 }
 .campaign-cordinator .table tbody tr th {
@@ -329,7 +325,6 @@
 	font-weight: 700;
 }
 .campaign-cordinator1 .table tbody tr td {
-	margin-bottom: ;
 	padding: 8px 0;
 }
 	

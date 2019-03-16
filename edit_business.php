@@ -108,7 +108,9 @@
                     <li><a href="#"><i class="fas fa-cogs lgo"></i>setting</a></li>
                     <li><a href="extra_pages.php"><i class="fas fa-users lgo"></i>Teams</a></li>
                     <li><a href="add-package.php"><i class="fas fa-box lgo"></i>Package</a></li>
+                    <li><a href="add_country.php"><i class="fas fa-globe lgo"></i>Country</a></li>
                     <li><a href="counter-dashboard.php"><i class="fas fa-calculator lgo"></i>Counter</a></li>
+                    <li><a href="all_business.php"><i class="fas fa-archive lgo"></i>All Business</a></li>
                     <li><a href="logout.php"><i class="fas fa-sign-out-alt lgo"></i>LogOut</a></li>
                 </ul>
             </div>
