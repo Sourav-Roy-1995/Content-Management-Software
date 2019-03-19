@@ -48,34 +48,34 @@
 
 			$_SESSION['auth_admin'] = $admin_session_id;
 
-			echo "<script>window.open('dashboard.php','_self')</script>";
+			//echo "<script>window.open('dashboard.php','_self')</script>";
 		}
 
 		else if (mysqli_num_rows($result_two) > 0) {
 
 			$_SESSION['auth_designer'] = $designer_session_id;
 
-			echo "<script>window.open('designer.php','_self')</script>";
+			//echo "<script>window.open('designer.php','_self')</script>";
 		}
 
 		else if (mysqli_num_rows($result_three) > 0) {
 
 			$_SESSION['auth_writer'] = $writer_session_id;
 
-			echo "<script>window.open('writer.php','_self')</script>";
+			//echo "<script>window.open('writer.php','_self')</script>";
 		}
 		else if (mysqli_num_rows($result_four) > 0) {
 
 			$_SESSION['auth_posting'] = $posting_session_id;
 
-			echo "<script>window.open('posting.php','_self')</script>";
+			//echo "<script>window.open('posting.php','_self')</script>";
 		}
 		
 		else if (mysqli_num_rows($result_five) > 0) {
 
 			$_SESSION['auth_guest'] = $guestrelation_session_id;
 
-			echo "<script>window.open('guestrelation.php','_self')</script>";
+			//echo "<script>window.open('guestrelation.php','_self')</script>";
 		}
 										
 		else {
@@ -97,23 +97,23 @@
 		
 
 		if(is_array($row_admin)) {
-			$_SESSION["name"] = $row_admin[name];
+			$_SESSION["name"] = $row_admin['name'];
 		}
 
 		else if(is_array($row_writer)) {
-			$_SESSION["name"] = $row_writer[name];
+			$_SESSION["name"] = $row_writer['name'];
 		}
 
 		else if(is_array($row_designer)) {
-			$_SESSION["name"] = $row_designer[name];
+			$_SESSION["name"] = $row_designer['name'];
 		}
 
 		else if(is_array($row_posting)) {
-			$_SESSION["name"] = $row_posting[name];
+			$_SESSION["name"] = $row_posting['name'];
 		}
 		
 		else if(is_array($row_guestrelation)) {
-			$_SESSION["name"] = $row_guestrelation[name];
+			$_SESSION["name"] = $row_guestrelation['name'];
 		}
 		
 		}
@@ -124,35 +124,23 @@
 
 <?php
 
-  session_start();
   if(isset($_SESSION['auth_admin'])){
-
-    // header('Location:dashboard.php');
     echo "<script>window.open('dashboard.php','_self')</script>";
   }
 
   else if(isset($_SESSION['auth_writer'])){
-
-    // header('Location:writer.php');
     echo "<script>window.open('writer.php','_self')</script>";
   }
 
   else if(isset($_SESSION['auth_designer'])){
-
-    // header('Location:designer.php');
     echo "<script>window.open('designer.php','_self')</script>";
   }
 
   else if(isset($_SESSION['auth_posting'])){
-
-    // header('Location:posting.php');
     echo "<script>window.open('posting.php','_self')</script>";
   }
   
-  
   else if(isset($_SESSION['auth_guest'])){
-
-    // header('Location:guestrelation.php');
     echo "<script>window.open('guestrelation.php','_self')</script>";
   }
 
@@ -251,6 +239,16 @@
     <script src="js/fontawesome-all.js"></script>
     <!-- main.js -->
     <script src="js/main.js"></script>
+
+    <script>
+        window.onload = function control_business_status()
+        {
+            $.ajax({  
+                url:"control_bs_status.php"
+            });  
+        }
+    </script>
+
 </body>
 
 </html>

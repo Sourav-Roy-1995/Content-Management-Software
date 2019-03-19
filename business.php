@@ -136,7 +136,9 @@
                 while($row=mysqli_fetch_array($result)){
                 $id=$row['id'];             
                 ?>
-                <li><a href="business.php?bs_id=<?php echo $id; ?>" ><?php echo $row['name']?></a></li>
+                <li>
+                    <a href="business.php?bs_id=<?php echo $id;?>" ><?php echo $row['name']?></a>
+                </li>
                 <?php
                 }
                 ?>   
@@ -268,7 +270,7 @@
 
                     <div class="assign-update">
                         <h5>Status</h5>
-                        <p><?php echo $row['bs_status']?></p>
+                        <p id="bs_status"><?php echo $row['bs_status']?></p>
                     </div>
 
                     <h3>Assign</h3>
@@ -338,7 +340,7 @@ require("connection.php");
 $business_id = $_GET['bs_id'];									
 $result = mysqli_query($conn,"SELECT * FROM business WHERE id= '".$business_id."' ");
 while($row=mysqli_fetch_array($result)){
-    echo strtotime($row['entry_date']);              
+   echo strtotime($row['entry_date']);     
 }
 ?>';    
 
@@ -353,14 +355,18 @@ while($row=mysqli_fetch_array($result)){
 }
 ?>';
 
-
 if(( exp_date != '' &&  current_date >= exp_date) || current_date < entry_date )
 {
-    $(".active-btn").removeClass('btn btn-secondary btn-block').addClass('btn btn-primary btn-block').html('Inactive');
+
+$(".active-btn").removeClass('btn btn-secondary btn-block').addClass('btn btn-primary btn-block').html('Inactive');
+    
 }
+
 else if((current_date < exp_date && current_date >= entry_date) || exp_date == '')
 { 
-    $(".active-btn").removeClass('btn btn-primary btn-block').addClass('btn btn-secondary btn-block').html('Active');
+
+$(".active-btn").removeClass('btn btn-primary btn-block').addClass('btn btn-secondary btn-block').html('Active');
+
 }
 
 }
