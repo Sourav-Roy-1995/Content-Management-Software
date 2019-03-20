@@ -20,20 +20,20 @@
 		$posting  = "posting";
 		$guestrelation  = "guestrelation";
         
-		$sql="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$admin' ";
-		$result_one = mysqli_query($conn, $sql);
+		$sql_admin="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$admin' ";
+		$result_one = mysqli_query($conn, $sql_admin);
 
-		$sql="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$designer' ";
-		$result_two = mysqli_query($conn, $sql);
+		$sql_designer="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$designer' ";
+		$result_two = mysqli_query($conn, $sql_designer);
 
-		$sql="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$writer' ";
-		$result_three = mysqli_query($conn, $sql);
+		$sql_writer="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$writer' ";
+		$result_three = mysqli_query($conn, $sql_writer);
 
-		$sql="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$posting' ";
-		$result_four = mysqli_query($conn, $sql);
+		$sql_posting="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$posting' ";
+		$result_four = mysqli_query($conn, $sql_posting);
 		
-		$sql="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$guestrelation' ";
-		$result_five = mysqli_query($conn, $sql);
+		$sql_guestrelation="SELECT * FROM user WHERE name='$name' AND password='$password' AND role= '$guestrelation' ";
+		$result_five = mysqli_query($conn, $sql_guestrelation);
 
 		/*Retricted user from accessing different role pages*/
 			
