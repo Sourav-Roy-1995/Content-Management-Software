@@ -46,36 +46,35 @@
 		
 		if (mysqli_num_rows($result_one) > 0) {
 
-			$_SESSION['auth_admin'] = $admin_session_id;
-
-			//echo "<script>window.open('dashboard.php','_self')</script>";
+            $_SESSION['auth_admin'] = $admin_session_id;
+            $_SESSION['LAST_ACTIVITY'] = time();
 		}
 
 		else if (mysqli_num_rows($result_two) > 0) {
 
-			$_SESSION['auth_designer'] = $designer_session_id;
+            $_SESSION['auth_designer'] = $designer_session_id;
+            $_SESSION['LAST_ACTIVITY'] = time();
 
-			//echo "<script>window.open('designer.php','_self')</script>";
 		}
 
 		else if (mysqli_num_rows($result_three) > 0) {
 
-			$_SESSION['auth_writer'] = $writer_session_id;
+            $_SESSION['auth_writer'] = $writer_session_id;
+            $_SESSION['LAST_ACTIVITY'] = time();
 
-			//echo "<script>window.open('writer.php','_self')</script>";
 		}
 		else if (mysqli_num_rows($result_four) > 0) {
 
-			$_SESSION['auth_posting'] = $posting_session_id;
+            $_SESSION['auth_posting'] = $posting_session_id;
+            $_SESSION['LAST_ACTIVITY'] = time();
 
-			//echo "<script>window.open('posting.php','_self')</script>";
 		}
 		
 		else if (mysqli_num_rows($result_five) > 0) {
 
-			$_SESSION['auth_guest'] = $guestrelation_session_id;
+            $_SESSION['auth_guest'] = $guestrelation_session_id;
+            $_SESSION['LAST_ACTIVITY'] = time();
 
-			//echo "<script>window.open('guestrelation.php','_self')</script>";
 		}
 										
 		else {

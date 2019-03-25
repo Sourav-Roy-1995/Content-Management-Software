@@ -264,7 +264,7 @@
 
 
 <!--Password Modal -->
-<div id="PasswordModal" class="modal fade" role="dialog" style="width:100%">
+<div id="PasswordModal" class="modal fade" role="dialog" style="width:100%;height:41.3pc;">
 <div class="modal-dialog">
 <!-- Modal content-->
 <div class="modal-content">
