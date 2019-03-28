@@ -1118,3 +1118,18 @@ div.dataTables_wrapper div.dataTables_info {
 .page-link:hover {
     color: #7E3E98;
 }
+
+.add_tag {
+    border: 1px solid #7E3E98;
+    background: #7E3E98;
+    padding: 3px 9px;
+    color: #fff!important;
+    cursor: pointer;
+}
+.comment {
+    margin-top: 37px;
+}
+.add_tag_area {
+    margin-top: -20px;
+    margin-left: 52.2pc;
+}

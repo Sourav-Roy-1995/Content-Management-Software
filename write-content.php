@@ -173,7 +173,7 @@
 
                         <textarea class="textarea clear-txt" type="text" name="vision" placeholder="vision" ></textarea>
                     
-                        <textarea class="textarea" type="text" name="tags" id="tag" placeholder="Tags" ></textarea>
+                        <textarea class="textarea clear-txt" type="text" name="tags" id="tag" placeholder="Tags"></textarea>
 
                         <textarea class="clear-txt" placeholder="Comments" name="comment" ></textarea>
                     </div>
@@ -615,7 +615,7 @@ $(document).ready(function(){
                     data:{name:name},  
                     success:function(data)  
                     {  
-                        $('#tag').html(data);  
+                        $('#tag').val(data);  
                     }  
                 });  
         }
