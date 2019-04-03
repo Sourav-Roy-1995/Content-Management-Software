@@ -225,38 +225,42 @@
     </div>
     <div class="form-group">
     <label>Date</label>
-    <input type="text" class="form-control date">
+    <input type="text" class="form-control date" id="update_date">
     </div>
 
     <div class="form-group">
     <label>Post Material</label>
-    <input type="text" id="post_material" class="form-control">
+   
+    <textarea rows="5" type="text" id="post_material" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
     <label>Tags</label>
-    <input type="text" id="tags" class="form-control">
+
+    <textarea rows="5" type="text" id="tags" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
     <label>Poster Material</label>
-    <input type="text" id="poster_material" class="form-control">
+    
+    <textarea rows="5"  type="text" id="poster_material" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
     <label>Vision</label>
-    <input type="text" id="vision" class="form-control">
+    <textarea rows="5"  type="text" id="vision" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
     <label>Comment</label>
-    <input type="text" id="comment" class="form-control">
+    <textarea rows="5"  type="text" id="comment" class="form-control"></textarea>
     </div>
     <input type="hidden" id="userId" class="form-control">
 </div>
 <div class="modal-footer">
-<a href="#" id="save" class="btn btn-primary pull-right">Update</a>
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+<a href="#" id="save" class="btn btn-info pull-right">Update</a>
+<button type="button" class="btn btn-info pull-left" data-dismiss="modal">Close</button>
+
 </div>
 </div>
 </div>
@@ -377,6 +381,19 @@ $(document).ready(function(){
         
 });  
 </script> <!-- date picker -->
+
+<!-- date picker -->
+<script>  
+$(document).ready(function(){  
+$.datepicker.setDefaults({  
+    dateFormat: 'dd-mm-yy'   
+});  
+$(function(){  
+    $(".date").datepicker();  
+});  
+    
+});  
+</script><!-- date picker -->
 
 <!-- One date input to another  -->
 <script >
