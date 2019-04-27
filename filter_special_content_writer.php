@@ -73,6 +73,9 @@ $status         =      $row['status'];
 
 <td>
     <div class="btn-group custom-table-2" role="group">
+
+      <a href="#<?php echo $row['id'];?>" class="btn btn-info btn-sm" data-role="delete" data-id="<?php echo $row['id'];?>">Delete</a>
+
         <a href="#<?php echo $row['id'];?>" class="btn btn-info btn-sm" data-role="update" data-id="<?php echo $row['id'] ;?>">Edit</a>
         <a href="#<?php echo $row['id'];?>" name="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-sm view_data ">View</a> 
     </div>

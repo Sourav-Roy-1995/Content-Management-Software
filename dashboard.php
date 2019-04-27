@@ -268,6 +268,37 @@ date_default_timezone_set('Asia/Dhaka');
 <script src="js/custom_date_picker.js"></script>
 
 
+<!-- Delete Content -->
+<script>
+
+$(document).ready(function(){
+//  append values in input fields
+$(document).on('click','a[data-role=delete]',function(){
+
+if(confirm("Are you sure you want to delete this?")){
+var el = this;
+var id  = $(this).data('id');
+
+$.ajax({
+    url      : 'delete_content.php',
+    method   : 'post', 
+    data     : {id: id},
+    success  : function(response){
+    // Removing row from HTML Table
+        $(el).closest('tr').css('background','tomato');
+        $(el).closest('tr').fadeOut(800, function(){ 
+        $(this).remove();
+      });
+    }
+
+});
+}
+else{
+        return false;
+    }
+});
+});
+</script>   <!-- Delete Content -->
 
 
 <!-- Model View -->
